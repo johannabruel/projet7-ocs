@@ -270,6 +270,16 @@ body {
 .error__link:hover {
   color: #000000;
 }
+@media screen and (max-width: 830px) {
+  .error__link {
+    font-size: 16px;
+  }
+}
+@media screen and (max-width: 375px) {
+  .error__link {
+    font-size: 14px;
+  }
+}
 .error__container {
   display: flex;
   flex-direction: column;
@@ -282,9 +292,29 @@ body {
   font-weight: 700;
   margin: 0;
 }
+@media screen and (max-width: 830px) {
+  .error__container--number {
+    font-size: 158px;
+  }
+}
+@media screen and (max-width: 375px) {
+  .error__container--number {
+    font-size: 96px;
+  }
+}
 .error__container--text {
   font-size: 36px;
   margin: 0;
+}
+@media screen and (max-width: 830px) {
+  .error__container--text {
+    font-size: 27px;
+  }
+}
+@media screen and (max-width: 375px) {
+  .error__container--text {
+    font-size: 18px;
+  }
 }
 
 /*# sourceMappingURL=main.css.map */
