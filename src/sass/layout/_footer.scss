@@ -1,0 +1,26 @@
+.footer{
+    background-color:$background-color;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    height: 200px;
+    width: 100%;
+
+    &__logo{
+        height: 40px;
+        margin: 30px 0;
+    }
+
+    &__copyright{
+        color:$color-title;
+        font-size: 24px;
+        display: flex;
+        justify-content: center;
+        @include breakpoint-tablet{
+            font-size: 18px;
+        }
+        @include breakpoint-mobile{
+            font-size: 12px;
+        }
+    }
+}

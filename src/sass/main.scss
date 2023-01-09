@@ -1,16 +1,20 @@
 // Utilisation Pattern 7-1
-@import "./App.scss";
 // Dossier "abstracts" qui contient variables, functions, mixins, placeholders
-
+@import "./abstracts/variables";
+@import "./abstracts/mixins";
 
 
 //Dossier "base" qui contient les fondations du site (police écriture, normes communes)
-
+@import "./base/base";
+@import "./base/typography";
 
 // Dossier "components" qui contient les petits composants 
-
-
+@import "./components/banner";
+@import "./components/card";
 // Dossier "layout" qui contient les feuilles de style pour les principales parties du site (header, footer, navigation)
-
+@import "./layout/header";
+@import "./layout/footer";
 
 // Dossier "pages" pour les styles spécifiques à certaines pages
+@import "./pages/home";
+@import "./pages/page404";
