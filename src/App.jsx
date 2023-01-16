@@ -21,7 +21,7 @@ function App() {
         <Routes>
           <Route element={<Home />} path="/" />
           <Route element={<About />} path="/about" />
-          <Route element={<Logement />} path="/fiche-logement" />
+          <Route element={<Logement />} path="/logements/:logementId" />
           <Route element={<Page404 />} path="*" />
         </Routes>
         <Footer />

@@ -1,0 +1,6 @@
+.sectionAbout{
+    margin: 0 208px;
+    @include breakpoint-tablet{
+        margin: 0 30px;
+    }
+}

@@ -6,7 +6,7 @@ import Card from "../components/Card";
 
 import logements from "../assets/api/logements.json";
 
-import imageBanner from "../assets/images/banner.svg";
+import imageBanner from "../assets/images/banner.jpg";
 
 function HomePage() {
     return (

@@ -1,0 +1,38 @@
+.host{
+    display: flex;
+    align-items: center;
+
+    &__name{
+        font-size: 18px;
+        font-weight: 500;
+        color: $color-primary;
+        margin: 0;
+        height: 64px;
+        padding-right: 10px;
+        @include breakpoint-tablet{
+            font-size: 12px;
+            height: 33px;
+        }
+        &--firstname{
+            margin: 0;
+            padding-bottom: 10px;
+            @include breakpoint-tablet{
+                padding-bottom: 5px;
+            }
+        }
+        &--lastname{
+            margin: 0;
+        }
+    }
+    &__image{
+        border-radius: 100px;
+        background-color: #c4c4c4;
+        width: 64px;
+        height: 64px;
+        object-fit: cover;
+        @include breakpoint-mobile{
+            width: 32px;
+            height: 32px;
+        }
+    }
+}

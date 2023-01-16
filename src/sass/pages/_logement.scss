@@ -1,0 +1,59 @@
+.containerLogement{
+    margin: 0 100px 30px 100px;
+    @include breakpoint-tablet{
+        margin: 22px 30px 0px 30px;
+        padding: 0;
+    }
+    @include breakpoint-mobile{
+        margin: 22px 20px 0px 20px;
+    }
+}
+
+.logement{
+    display: flex;
+    justify-content: space-between;
+    @include breakpoint-tablet{
+        flex-direction: column;
+    }
+}
+.logement__header{
+    width: 70% ;
+    @include breakpoint-tablet{
+        width: 100%;
+    }
+    &--title{
+        color: $color-primary;
+        font-size: 36px;
+        font-weight: 500;
+        margin: 0;
+        @include breakpoint-tablet{
+            font-size: 26px;
+        }
+        @include breakpoint-mobile{
+            font-size: 18px;
+        }
+    }
+    &--location{
+        color:$color-primary;
+        font-size: 18px;
+        font-weight: 500;
+        margin: 5px 0;
+        @include breakpoint-tablet{
+            font-size: 15px;
+        }
+        @include breakpoint-mobile{
+            font-size: 14px;
+        }
+    }
+    &--tags{
+        display: flex;
+    }
+}
+
+.logement__plus{
+    @include breakpoint-tablet{
+        display: flex;
+        flex-direction: row-reverse;
+        justify-content: space-between;
+    }
+}

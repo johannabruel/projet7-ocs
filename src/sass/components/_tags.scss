@@ -1,0 +1,24 @@
+.tag{
+    margin: 20px 10px 20px 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-width: 115px;
+    height: 25px;
+    background-color: $color-primary;
+    border-radius: 10px;
+    @include breakpoint-tablet{
+        min-width: 84px;
+    }
+
+    &__text{
+        font-size: 14px;
+        font-weight: 500;
+        color:$color-title;
+        text-align: center;
+        @include breakpoint-tablet{
+            font-size: 10px;
+        }
+    }
+
+}

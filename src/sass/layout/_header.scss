@@ -33,7 +33,6 @@
     }
     &__nav a{
         color: $color-primary;
-        text-decoration: none;
         font-size: 24px;
         font-weight: 500;
         @include breakpoint-tablet{
@@ -48,7 +47,8 @@
             color:$background-color;
         }
     }
-
-
 }
 
+.header__navIdle{
+    text-decoration: none;
+}
