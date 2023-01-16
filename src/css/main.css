@@ -193,6 +193,13 @@ body {
   }
 }
 
+.collapselist {
+  padding: 0;
+}
+.collapselist__item {
+  list-style-type: none;
+}
+
 @keyframes show {
   0% {
     transform: scaleY(0);
@@ -593,6 +600,24 @@ body {
     display: flex;
     flex-direction: row-reverse;
     justify-content: space-between;
+  }
+}
+
+.collapseLogement {
+  display: flex;
+  justify-content: space-between;
+}
+@media screen and (max-width: 830px) {
+  .collapseLogement {
+    display: block;
+  }
+}
+.collapseLogement__container {
+  width: 48%;
+}
+@media screen and (max-width: 830px) {
+  .collapseLogement__container {
+    width: 100%;
   }
 }
 

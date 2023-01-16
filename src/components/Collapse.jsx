@@ -15,7 +15,20 @@ function Collapse({textTitle, textDescription }){
 
             {
                 /* Si le collapse est true alors affichage de la description */
-                open && <p className="collapse__description">{textDescription}</p>
+                open && <div className="collapse__description">{
+                    Array.isArray(textDescription)? (
+                        <ul className="collapselist">
+                            {textDescription.map((equipement, index)=>(
+                                <li className="collapselist__item" key={index}>
+                                    {equipement}
+                                </li>
+                            ))}
+                        </ul>
+                    ):
+                    (
+                        <p>{textDescription}</p>
+                    )}
+                </div>
             }
         </div> 
     )

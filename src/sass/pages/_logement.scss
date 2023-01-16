@@ -57,3 +57,18 @@
         justify-content: space-between;
     }
 }
+
+.collapseLogement{
+    display: flex;
+    justify-content: space-between;
+    @include breakpoint-tablet{
+        display: block;
+    }
+    
+    &__container{
+        width: 48%;
+        @include breakpoint-tablet{
+            width: 100%;
+        }
+    }
+}

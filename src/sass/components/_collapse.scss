@@ -74,6 +74,13 @@
     }
 }
 
+.collapselist{
+    padding: 0;
+    &__item{
+        list-style-type: none;
+    }
+}
+
 @keyframes show{
     0% {transform: scaleY(0);transform-origin: 50% 0%;opacity: 0}
     100% {transform: scaleY(1);transform-origin: 50% 0%;opacity: 1}

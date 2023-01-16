@@ -31,9 +31,13 @@ function Logement() {
                 
             </section>
             
-            <section>
-                <Collapse textTitle={"Description"} textDescription={description}/>
-                <Collapse textTitle={"Equipements"} textDescription={equipments}/>
+            <section className="collapseLogement">
+                <div className="collapseLogement__container">
+                    <Collapse textTitle={"Description"} textDescription={description} />
+                </div>
+                <div className="collapseLogement__container">
+                    <Collapse textTitle={"Equipements"} textDescription={equipments} />
+                </div>
             </section>
         </main>
     );
