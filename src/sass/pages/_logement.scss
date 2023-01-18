@@ -12,8 +12,10 @@
 .logement{
     display: flex;
     justify-content: space-between;
+    margin-top: 30px;
     @include breakpoint-tablet{
         flex-direction: column;
+        margin-top: 15px;
     }
 }
 .logement__header{

@@ -5,15 +5,19 @@ import logements from "../assets/api/logements.json"
 import Collapse from "../components/Collapse";
 import Host from "../components/Host";
 import Rating from "../components/Rating";
+import Slideshow from "../components/Slideshow";
 import Tags from "../components/Tags";
 
 function Logement() {
     const { logementId } = useParams();
     const logement = logements.find((logement)=>logement.id ===logementId)
-    const {title, location, host, rating, description, equipments}= logement;
+    const {title, location, host, rating, description, equipments, pictures}= logement;
     
     return (
         <main className="containerLogement">
+            <section>
+                <Slideshow slides={pictures} show={1} infiniteLoop={true}/>
+            </section>
             <section className="logement">
                 <div className="logement__header">
                     <h1 className="logement__header--title">{title}</h1>
