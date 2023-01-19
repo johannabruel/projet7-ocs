@@ -4,8 +4,8 @@ import leftArrow from "../assets/images/vectorleft.svg";
 import rightArrow from "../assets/images/vectorright.svg";
 
 function Slideshow ({slides}){
-    const [currentIndex, setCurrentIndex] = useState(0)
-    const [length, setLength] = useState(slides.length)
+    const [currentIndex, setCurrentIndex] = useState(0) /*Fixe l'index du premier slide à 0*/
+    const [length, setLength] = useState(slides.length) /*Longueur du tableau */
 
     useEffect(()=> {
         setLength(slides.length)
@@ -13,16 +13,16 @@ function Slideshow ({slides}){
 
     const next = () => {
         const lastSlide = currentIndex === slides.length -1;
-        const newIndex = lastSlide ? 0 : currentIndex + 1;
+        const newIndex = lastSlide ? 0 : currentIndex + 1; /*Retourne a la 1ère slide lorsque arrive au dernier */
         setCurrentIndex(newIndex);
     }
 
     const prev = () => {
         const firstSlide = currentIndex === 0;
-        const newIndex = firstSlide ? slides.length -1 : currentIndex -1;
+        const newIndex = firstSlide ? slides.length -1 : currentIndex -1; /*Retourne au dernier slide lorsque on est au 1er */
         setCurrentIndex(newIndex);
     }
-
+    
     return (
         <div className="carousel">
             <div className="carousel__wrapper">

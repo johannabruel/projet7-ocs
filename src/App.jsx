@@ -8,10 +8,11 @@ import './css/main.css';
 import Home from "./pages/Home";
 import About from "./pages/About";
 import Logement from "./pages/Logement";
-import Page404 from "./pages/Page404";
+import Error from "./pages/Error";
 
 import Header from './components/Header';
 import Footer from './components/Footer';
+
 
 function App() {
   return (
@@ -19,10 +20,13 @@ function App() {
       <Router>
         <Header />
         <Routes>
-          <Route element={<Home />} path="/" />
-          <Route element={<About />} path="/about" />
-          <Route element={<Logement />} path="/logements/:logementId" />
-          <Route element={<Page404 />} path="*" />
+          <Route exact path="/" element={<Home />} />
+          <Route exact path="/about" element={<About />} />
+          <Route 
+            exact path="/logements/:logementId" 
+            element={<Logement />} 
+          />
+          <Route path="*" element={<Error />} />
         </Routes>
         <Footer />
       </Router>

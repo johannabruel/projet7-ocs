@@ -1,7 +1,7 @@
 import React from "react";
-import { useParams } from "react-router";
+import { Navigate, useParams } from "react-router-dom";
 
-import logements from "../assets/api/logements.json"
+import Logements from "../assets/api/logements.json"
 import Collapse from "../components/Collapse";
 import Host from "../components/Host";
 import Rating from "../components/Rating";
@@ -9,19 +9,21 @@ import Slideshow from "../components/Slideshow";
 import Tags from "../components/Tags";
 
 function Logement() {
-    const { logementId } = useParams();
-    const logement = logements.find((logement)=>logement.id ===logementId)
-    const {title, location, host, rating, description, equipments, pictures}= logement;
+    const { logementId } = useParams(); // Récupère ID 
+    const logementArray= Logements.filter((element)=>element.id ===logementId); // Recherche de l'objet dans BD
     
-    return (
+   const logement= logementArray.length === 1 ? logementArray[0] : null; // Vérifie si correspond a un seul logement sinon null
+    window.scrollTo(0,0);
+    
+    return logement ? ( // Si le logement existe
         <main className="containerLogement">
             <section>
-                <Slideshow slides={pictures} show={1} infiniteLoop={true}/>
+                <Slideshow slides={logement.pictures}/>
             </section>
             <section className="logement">
                 <div className="logement__header">
-                    <h1 className="logement__header--title">{title}</h1>
-                    <h2 className="logement__header--location">{location}</h2>
+                    <h1 className="logement__header--title">{logement.title}</h1>
+                    <h2 className="logement__header--location">{logement.location}</h2>
                     <div className="logement__header--tags">
                         {logement.tags.map((tag, index)=>(
                             <Tags key={`logement_tag-${index}`} textTag={tag}/>
@@ -29,22 +31,27 @@ function Logement() {
                     </div>
                 </div>
                 <div className="logement__plus">
-                    <Host host={host}/>
-                    <Rating rating={rating}/>
+                    <Host host={logement.host}/>
+                    <Rating rating={logement.rating}/>
                 </div>
                 
             </section>
             
             <section className="collapseLogement">
                 <div className="collapseLogement__container">
-                    <Collapse textTitle={"Description"} textDescription={description} />
+                    <Collapse textTitle={"Description"} textDescription={logement.description} />
                 </div>
                 <div className="collapseLogement__container">
-                    <Collapse textTitle={"Equipements"} textDescription={equipments} />
+                    <Collapse textTitle={"Equipements"} textDescription={logement.equipments} />
                 </div>
             </section>
         </main>
+    ) :
+    ( //Si le logement n'existe pas, redirection sur la page error
+        <Navigate to="/error" />
     );
+    
+    
 };
 
 export default Logement;
