@@ -10,13 +10,11 @@ function Slideshow ({slides}){
     useEffect(()=> {
         setLength(slides.length)
     }, [slides])
-
     const next = () => {
         const lastSlide = currentIndex === slides.length -1;
         const newIndex = lastSlide ? 0 : currentIndex + 1; /*Retourne a la 1ère slide lorsque arrive au dernier */
         setCurrentIndex(newIndex);
     }
-
     const prev = () => {
         const firstSlide = currentIndex === 0;
         const newIndex = firstSlide ? slides.length -1 : currentIndex -1; /*Retourne au dernier slide lorsque on est au 1er */
@@ -34,10 +32,14 @@ function Slideshow ({slides}){
                 <div className="carousel__wrapper--content">
                     <div className="carousel__content">
                         {slides.map((slide, index) => (
-                             <img src={slide} alt="hébergement" 
-                             key={index} 
-                             style={{transform:`translateX(-${currentIndex * 100}%)`,transition:`700ms ease-in-out`}}
-                             className="carousel__content--image"/>
+                             <img src={slide} 
+                             alt="hébergement"
+                             className="carousel__content--image" 
+                             key={`carousel__content-${index}`} 
+                             style={{
+                                transform:`translateX(-${currentIndex * 100}%)`,
+                                transition:`500ms ease-in-out`
+                                }}/>
                             ))
                         }
                         <p className="carousel__content--compter">{currentIndex+1}/{slides.length}</p>

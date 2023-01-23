@@ -337,6 +337,7 @@ body {
 
 .carousel__content {
   display: flex;
+  height: 100%;
   transition: all 250ms linear;
   -ms-overflow-style: none; /* Masquer la barre de défilement dans IE et Edge */
   scrollbar-width: none; /* Masquer la barre de défilement dans Firefox */
@@ -344,6 +345,16 @@ body {
 .carousel__content--image {
   object-fit: cover;
   height: 415px;
+}
+@media screen and (max-width: 830px) {
+  .carousel__content--image {
+    height: 315px;
+  }
+}
+@media screen and (max-width: 375px) {
+  .carousel__content--image {
+    height: 255px;
+  }
 }
 .carousel__content--compter {
   font-size: 18px;

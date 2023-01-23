@@ -26,12 +26,19 @@
 
 .carousel__content {
     display: flex;
+    height: 100%;
     transition: all 250ms linear;
     -ms-overflow-style: none; /* Masquer la barre de défilement dans IE et Edge */
     scrollbar-width: none ; /* Masquer la barre de défilement dans Firefox */
     &--image {
         object-fit: cover;
         height: 415px;
+        @include breakpoint-tablet{
+            height: 315px;
+        }
+        @include breakpoint-mobile{
+            height: 255px
+        }
     }
     &--compter{
         font-size: 18px;

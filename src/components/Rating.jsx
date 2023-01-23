@@ -8,14 +8,19 @@ function Rating({rating}){
 
     return (
         <div className="rating">
-            {stars.map((star) => rating >= star ? (
-                <img key={star.toString()} src={redstar} alt="symbole étoile" className="rating__image"/>
+            {stars.map((star, index) => rating >= star ? (
+                <img key={`star_red-${index}`} 
+                src={redstar} 
+                alt="symbole étoile" 
+                className="rating__image"/>
             ):(
-                <img key={star.toString()} src={greystar} alt="symbole étoile" className="rating__image" />
+                <img key={`star_grey-${index}`} 
+                src={greystar} 
+                alt="symbole étoile" 
+                className="rating__image" />
             )
             )}
         </div>
     )
 }
-
 export default Rating
