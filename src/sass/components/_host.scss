@@ -7,21 +7,21 @@
         font-weight: 500;
         color: $color-primary;
         margin: 0;
-        height: 64px;
         padding-right: 10px;
+        text-align: right;
         @include breakpoint-tablet{
+            font-size: 16px;
+        }
+        @include breakpoint-mobile{
             font-size: 12px;
-            height: 33px;
         }
         &--firstname{
             margin: 0;
-            padding-bottom: 10px;
-            @include breakpoint-tablet{
-                padding-bottom: 5px;
-            }
+            padding: 0;
         }
         &--lastname{
             margin: 0;
+            padding: 0;
         }
     }
     &__image{

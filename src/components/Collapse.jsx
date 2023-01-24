@@ -2,18 +2,17 @@ import React, { useState } from "react";
 import arrow from "../assets/images/Vector.svg";
 
 function Collapse({textTitle, textDescription }){
-    const [open, setOpen] = useState(false);
+    const [isOpen, setIsOpen] = useState(false);
     return (
         <div className="collapse">
-            <button className="collapse__button">
+            <button className="collapse__button" onClick={() => setIsOpen(!isOpen)}>
                 <h3 className="collapse__button--title">{textTitle}</h3>
-                <img className={`collapse__button--arrow ${open}`} 
-                onClick={() => setOpen(!open)} 
+                <img className={`collapse__button--arrow ${isOpen}`} 
                 src={arrow} 
                 alt="Flèche"/> 
             </button>
             {
-                open && <div className="collapse__description">{
+                <div className={`collapse__description ${isOpen ? 'open' : 'closed'}`}>{
                     Array.isArray(textDescription)? (
                         <ul className="collapselist">
                             {textDescription.map((equipement, index)=>(
@@ -24,7 +23,7 @@ function Collapse({textTitle, textDescription }){
                         </ul>
                     ):
                     (
-                        <p>{textDescription}</p>
+                        <p className="collapsetext">{textDescription}</p>
                     )}
                 </div>
             }

@@ -10,6 +10,7 @@ function Slideshow ({slides}){
     useEffect(()=> {
         setLength(slides.length)
     }, [slides])
+
     const next = () => {
         const lastSlide = currentIndex === slides.length -1;
         const newIndex = lastSlide ? 0 : currentIndex + 1; /*Retourne a la 1ère slide lorsque arrive au dernier */
@@ -38,7 +39,6 @@ function Slideshow ({slides}){
                              key={`carousel__content-${index}`} 
                              style={{
                                 transform:`translateX(-${currentIndex * 100}%)`,
-                                transition:`500ms ease-in-out`
                                 }}/>
                             ))
                         }
